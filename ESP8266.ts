@@ -28,9 +28,9 @@ namespace ESP8266_IoT {
             BaudRate.BaudRate9600
         )
         basic.pause(10)
-        serial.writeString("AT+CWMODE=1" + "\u000D" + "\u000A")
+        serial.writeString("AT+CWMODE=1")
         basic.pause(5000)
-        serial.writeString("AT+RST" + "\u000D" + "\u000A")
+        serial.writeString("AT+RST")
         basic.pause(5000)
         // Add code here
     }
@@ -50,7 +50,7 @@ namespace ESP8266_IoT {
                  + key
                  + "\""
         
-        serial.writeString(text + "\u000D" + "\u000A")
+        serial.writeString(text)
         basic.pause(6000)
     }
 
@@ -62,7 +62,7 @@ namespace ESP8266_IoT {
     export function connectthingspeak(): void {
         // Add code here
         let text = "AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80"
-        serial.writeString(text + "\u000D" + "\u000A")
+        serial.writeString(text)
         basic.pause(6000)
     }
 
@@ -121,9 +121,9 @@ namespace ESP8266_IoT {
         let text = ""
         text = "AT+CIPSEND=" 
             + (tobesendstring.length + 2)
-        serial.writeString(text + "\u000D" + "\u000A")
+        serial.writeString(text)
         basic.pause(3000)
-        serial.writeString(tobesendstring + "\u000D" + "\u000A")
+        serial.writeString(tobesendstring)
         basic.pause(6000)
         // Add code here
 
